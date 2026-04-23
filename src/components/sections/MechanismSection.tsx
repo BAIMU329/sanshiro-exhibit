@@ -1,8 +1,29 @@
+import type { CSSProperties } from "react";
 import { SectionHeader } from "@/components/layout/SectionHeader";
 import { SectionShell } from "@/components/layout/SectionShell";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { MechanismNode } from "@/components/ui/MechanismNode";
 import { mechanism } from "@/data/site";
+
+const constraintNodes = [
+  { label: mechanism.constraints[0], x: 170, y: 88, delay: 0 },
+  { label: mechanism.constraints[1], x: 170, y: 200, delay: 0.1 },
+  { label: mechanism.constraints[2], x: 170, y: 312, delay: 0.2 },
+  { label: mechanism.constraints[3], x: 170, y: 424, delay: 0.3 },
+];
+
+const interiorNodes = [
+  { label: mechanism.interior[0], x: 470, y: 88, delay: 0.12 },
+  { label: mechanism.interior[1], x: 500, y: 174, delay: 0.24 },
+  { label: mechanism.interior[2], x: 470, y: 286, delay: 0.36 },
+  { label: mechanism.interior[3], x: 500, y: 398, delay: 0.48 },
+];
+
+const outcomeNodes = [
+  { label: mechanism.outcomes[0], x: 814, y: 140, delay: 0.32 },
+  { label: mechanism.outcomes[1], x: 850, y: 260, delay: 0.48 },
+  { label: mechanism.outcomes[2], x: 810, y: 388, delay: 0.64 },
+];
 
 export function MechanismSection() {
   return (
@@ -28,54 +49,125 @@ export function MechanismSection() {
           </div>
 
           <div className="relative hidden min-h-[520px] xl:block">
-            <svg className="absolute inset-0 h-full w-full" viewBox="0 0 1000 520" fill="none">
-              <path d="M170 88C310 88 360 76 470 88" stroke="rgba(58,56,52,0.45)" strokeWidth="2" />
-              <path d="M170 200C308 200 358 160 470 174" stroke="rgba(58,56,52,0.45)" strokeWidth="2" />
-              <path d="M170 312C308 312 350 286 470 286" stroke="rgba(58,56,52,0.45)" strokeWidth="2" />
-              <path d="M170 424C306 424 352 404 470 398" stroke="rgba(58,56,52,0.45)" strokeWidth="2" />
-              <path d="M560 90C688 118 736 130 810 140" stroke="rgba(93,107,99,0.28)" strokeWidth="2" strokeDasharray="8 10" />
-              <path d="M600 198C714 220 750 230 846 260" stroke="rgba(93,107,99,0.28)" strokeWidth="2" strokeDasharray="8 10" />
-              <path d="M550 320C694 330 748 354 804 388" stroke="rgba(93,107,99,0.28)" strokeWidth="2" strokeDasharray="8 10" />
-              <circle cx="170" cy="88" r="4" fill="#7E4B3A" />
-              <circle cx="470" cy="88" r="4" fill="#5D6B63" />
-              <circle cx="170" cy="200" r="4" fill="#7E4B3A" />
-              <circle cx="470" cy="174" r="4" fill="#5D6B63" />
-              <circle cx="170" cy="312" r="4" fill="#7E4B3A" />
-              <circle cx="470" cy="286" r="4" fill="#5D6B63" />
-              <circle cx="170" cy="424" r="4" fill="#7E4B3A" />
-              <circle cx="470" cy="398" r="4" fill="#5D6B63" />
+            <svg
+              className="pointer-events-none absolute inset-0 h-full w-full"
+              viewBox="0 0 1000 520"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M170 88C292 88 336 88 470 88"
+                stroke="rgba(58,56,52,0.45)"
+                strokeWidth="2"
+              />
+              <path
+                d="M170 200C300 200 352 186 500 174"
+                stroke="rgba(58,56,52,0.45)"
+                strokeWidth="2"
+              />
+              <path
+                d="M170 312C298 312 350 300 470 286"
+                stroke="rgba(58,56,52,0.45)"
+                strokeWidth="2"
+              />
+              <path
+                d="M170 424C296 424 350 420 500 398"
+                stroke="rgba(58,56,52,0.45)"
+                strokeWidth="2"
+              />
+              <path
+                d="M470 88C620 96 706 108 814 140"
+                stroke="rgba(93,107,99,0.3)"
+                strokeWidth="2"
+                strokeDasharray="8 10"
+              />
+              <path
+                d="M500 174C648 196 740 220 850 260"
+                stroke="rgba(93,107,99,0.3)"
+                strokeWidth="2"
+                strokeDasharray="8 10"
+              />
+              <path
+                d="M470 286C628 304 718 334 810 388"
+                stroke="rgba(93,107,99,0.3)"
+                strokeWidth="2"
+                strokeDasharray="8 10"
+              />
+              <path
+                d="M500 398C646 394 726 390 810 388"
+                stroke="rgba(93,107,99,0.22)"
+                strokeWidth="2"
+                strokeDasharray="8 10"
+              />
+
+              {constraintNodes.map((node) => (
+                <circle key={`constraint-${node.label}`} cx={node.x} cy={node.y} r="4" fill="#7E4B3A" />
+              ))}
+              {interiorNodes.map((node) => (
+                <circle key={`interior-${node.label}`} cx={node.x} cy={node.y} r="4" fill="#5D6B63" />
+              ))}
+              {outcomeNodes.map((node) => (
+                <circle
+                  key={`outcome-${node.label}`}
+                  cx={node.x}
+                  cy={node.y}
+                  r="4"
+                  fill="rgba(93,107,99,0.7)"
+                />
+              ))}
             </svg>
 
-            <div className="absolute left-4 top-10 flex w-[180px] flex-col gap-7">
-              {mechanism.constraints.map((label, index) => (
-                <FadeIn key={label} delay={0.1 * index}>
-                  <MechanismNode label={label} variant="constraint" />
-                </FadeIn>
-              ))}
+            {constraintNodes.map((node) => (
+              <FadeIn
+                key={node.label}
+                delay={node.delay}
+                className="absolute -translate-x-1/2 -translate-y-1/2"
+                style={{
+                  left: `${(node.x / 1000) * 100}%`,
+                  top: `${(node.y / 520) * 100}%`,
+                } as CSSProperties}
+              >
+                <MechanismNode label={node.label} variant="constraint" className="w-[190px]" />
+              </FadeIn>
+            ))}
+
+            {interiorNodes.map((node) => (
+              <FadeIn
+                key={node.label}
+                delay={node.delay}
+                className="absolute -translate-x-1/2 -translate-y-1/2"
+                style={{
+                  left: `${(node.x / 1000) * 100}%`,
+                  top: `${(node.y / 520) * 100}%`,
+                } as CSSProperties}
+              >
+                <MechanismNode label={node.label} variant="interior" className="w-[164px]" />
+              </FadeIn>
+            ))}
+
+            {outcomeNodes.map((node) => (
+              <FadeIn
+                key={node.label}
+                delay={node.delay}
+                className="absolute -translate-x-1/2 -translate-y-1/2"
+                style={{
+                  left: `${(node.x / 1000) * 100}%`,
+                  top: `${(node.y / 520) * 100}%`,
+                } as CSSProperties}
+              >
+                <MechanismNode label={node.label} variant="outcome" className="w-[170px]" />
+              </FadeIn>
+            ))}
+
+            <div className="absolute left-[46%] top-[46%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[var(--grid-line)]/80 bg-white/50 px-3 py-2 text-[11px] tracking-[0.16em] text-[var(--ink-muted)] backdrop-blur-sm">
+              structure → response
             </div>
 
-            <div className="absolute left-[38%] top-8 flex w-[150px] flex-col gap-10">
-              {mechanism.interior.map((label, index) => (
-                <FadeIn key={label} delay={0.12 * (index + 1)}>
-                  <MechanismNode
-                    label={label}
-                    variant="interior"
-                    className={index % 2 === 0 ? "translate-x-0" : "translate-x-10"}
-                  />
-                </FadeIn>
-              ))}
-            </div>
-
-            <div className="absolute right-6 top-16 flex w-[150px] flex-col gap-12">
-              {mechanism.outcomes.map((label, index) => (
-                <FadeIn key={label} delay={0.16 * (index + 2)}>
-                  <MechanismNode
-                    label={label}
-                    variant="outcome"
-                    className={index === 1 ? "translate-x-10" : ""}
-                  />
-                </FadeIn>
-              ))}
+            <div className="absolute right-3 top-[17%] max-w-[180px] text-right">
+              <p className="eyebrow">Suspension</p>
+              <p className="mt-2 text-sm leading-7 text-[var(--ink-soft)]">
+                越靠近结果，行动越变得稀薄，关系开始以“未完成”的方式存在。
+              </p>
             </div>
           </div>
 

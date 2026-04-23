@@ -23,13 +23,13 @@ export function HeroSection() {
           style={{ y: hazeY }}
           className="map-haze absolute inset-x-[34%] top-16 bottom-16 rounded-[48px]"
         />
-        <div className="kanji-ghost ambient-drift absolute right-8 top-32 hidden text-[10rem] leading-none xl:block 2xl:text-[11rem]">
+        <div className="kanji-ghost ambient-drift absolute right-8 top-32 hidden text-[10rem] leading-none 2xl:block 2xl:text-[11rem]">
           東京
         </div>
         <div className="absolute left-4 top-10 h-[2px] w-[calc(100%-7rem)] origin-left rotate-[34deg] bg-[linear-gradient(90deg,rgba(107,91,82,0.9),rgba(107,91,82,0.15))] lg:left-12" />
         <motion.div
           style={{ y: plaqueY }}
-          className="route-plaque absolute right-2 top-8 hidden w-56 rounded-[24px] p-4 2xl:right-6 2xl:top-16 2xl:w-64 2xl:rounded-[28px] 2xl:p-5 xl:block"
+          className="route-plaque absolute right-6 top-16 hidden w-64 rounded-[28px] p-5 2xl:block"
         >
           <p className="eyebrow">Route / 1909</p>
           <div className="mt-4 space-y-3 text-sm leading-7 text-[var(--ink-soft)]">
@@ -43,7 +43,7 @@ export function HeroSection() {
         </motion.div>
         <motion.div
           style={{ y: plaqueY }}
-          className="route-plaque absolute bottom-18 right-8 hidden max-w-[15rem] rounded-[22px] p-4 2xl:bottom-24 2xl:right-24 2xl:max-w-xs 2xl:rounded-[26px] 2xl:p-5 xl:block"
+          className="route-plaque absolute bottom-24 right-24 hidden max-w-xs rounded-[26px] p-5 2xl:block"
         >
           <p className="font-[var(--font-display)] text-lg tracking-[0.24em] text-[var(--rust)]">
             sanshiro

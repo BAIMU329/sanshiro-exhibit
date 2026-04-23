@@ -1,6 +1,5 @@
 import { SectionHeader } from "@/components/layout/SectionHeader";
 import { SectionShell } from "@/components/layout/SectionShell";
-import { QuoteAside } from "@/components/layout/QuoteAside";
 import { FadeIn } from "@/components/ui/FadeIn";
 
 const milestones = [
@@ -19,14 +18,7 @@ const statements = [
 export function EraSection() {
   return (
     <SectionShell id="era" index="02" className="py-24 md:py-32">
-      <div className="relative grid gap-12 xl:grid-cols-[260px_minmax(0,1fr)] xl:gap-12 2xl:gap-16">
-        <div className="kanji-ghost absolute right-0 top-0 hidden text-[9rem] leading-none 2xl:block">
-          時代
-        </div>
-        <QuoteAside
-          quote="这一屏必须先稳定下来。只有世界足够稳定，一个人的摇晃才会被真正看见。"
-          className="absolute right-0 top-36 hidden 2xl:block"
-        />
+      <div className="grid gap-12 xl:grid-cols-[260px_minmax(0,1fr)] xl:gap-12 2xl:gap-16">
         <FadeIn>
           <div className="route-plaque relative space-y-6 rounded-[28px] p-6">
             <div className="absolute left-0 top-6 h-[calc(100%-3rem)] w-px bg-[var(--mist)]" />
@@ -48,6 +40,13 @@ export function EraSection() {
               title="先是时代变了"
               description="《三四郎》的不安并不只属于三四郎自己，它也属于那个刚刚学会现代化、却还没学会安放青年的时代。"
             />
+          </FadeIn>
+          <FadeIn delay={0.08}>
+            <div className="route-plaque max-w-xl rounded-[24px] p-5">
+              <p className="text-sm leading-7 text-[var(--ink-soft)]">
+                这一屏需要先稳定下来。只有世界足够稳定，一个人的摇晃才会被真正看见。
+              </p>
+            </div>
           </FadeIn>
           <div className="grid gap-5 md:grid-cols-3">
             {statements.map((statement, index) => (

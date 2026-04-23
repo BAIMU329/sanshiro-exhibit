@@ -23,36 +23,7 @@ export function HeroSection() {
           style={{ y: hazeY }}
           className="map-haze absolute inset-x-[34%] top-16 bottom-16 rounded-[48px]"
         />
-        <div className="kanji-ghost ambient-drift absolute right-8 top-32 hidden text-[10rem] leading-none 2xl:block 2xl:text-[11rem]">
-          東京
-        </div>
         <div className="absolute left-4 top-10 h-[2px] w-[calc(100%-7rem)] origin-left rotate-[34deg] bg-[linear-gradient(90deg,rgba(107,91,82,0.9),rgba(107,91,82,0.15))] lg:left-12" />
-        <motion.div
-          style={{ y: plaqueY }}
-          className="route-plaque absolute right-6 top-16 hidden w-64 rounded-[28px] p-5 2xl:block"
-        >
-          <p className="eyebrow">Route / 1909</p>
-          <div className="mt-4 space-y-3 text-sm leading-7 text-[var(--ink-soft)]">
-            <p className="flex items-center justify-between">
-              <span>熊本</span>
-              <span className="h-px w-16 bg-[var(--mist)]" />
-              <span>东京</span>
-            </p>
-            <p>从熟人社会进入匿名都市，真正开始迷路的，是判断世界的方法。</p>
-          </div>
-        </motion.div>
-        <motion.div
-          style={{ y: plaqueY }}
-          className="route-plaque absolute bottom-24 right-24 hidden max-w-xs rounded-[26px] p-5 2xl:block"
-        >
-          <p className="font-[var(--font-display)] text-lg tracking-[0.24em] text-[var(--rust)]">
-            sanshiro
-          </p>
-          <p className="mt-3 text-sm leading-7 text-[var(--ink-soft)]">
-            这不是把观点排成网页，
-            而是试着把《三四郎》里那种缓慢、迟疑、难以言明的晃动重新放到眼前。
-          </p>
-        </motion.div>
 
         <motion.div
           style={{ y: titleY, opacity: titleOpacity }}
@@ -90,6 +61,30 @@ export function HeroSection() {
               向下进入东京
             </a>
           </FadeIn>
+          <motion.div
+            style={{ y: plaqueY }}
+            className="grid max-w-2xl gap-4 pt-4 lg:grid-cols-[1fr_1fr]"
+          >
+            <div className="route-plaque rounded-[24px] p-4">
+              <p className="eyebrow">Route / 1909</p>
+              <div className="mt-3 space-y-3 text-sm leading-7 text-[var(--ink-soft)]">
+                <p className="flex items-center justify-between">
+                  <span>熊本</span>
+                  <span className="h-px w-16 bg-[var(--mist)]" />
+                  <span>东京</span>
+                </p>
+                <p>从熟人社会进入匿名都市，真正开始迷路的，是判断世界的方法。</p>
+              </div>
+            </div>
+            <div className="route-plaque rounded-[24px] p-4">
+              <p className="font-[var(--font-display)] text-lg tracking-[0.24em] text-[var(--rust)]">
+                sanshiro
+              </p>
+              <p className="mt-3 text-sm leading-7 text-[var(--ink-soft)]">
+                这不是把观点排成网页，而是试着把《三四郎》里那种缓慢、迟疑、难以言明的晃动重新放到眼前。
+              </p>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </SectionShell>

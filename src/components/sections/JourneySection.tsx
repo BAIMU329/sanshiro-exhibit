@@ -4,7 +4,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { SectionHeader } from "@/components/layout/SectionHeader";
 import { SectionShell } from "@/components/layout/SectionShell";
-import { QuoteAside } from "@/components/layout/QuoteAside";
 import { FadeIn } from "@/components/ui/FadeIn";
 
 export function JourneySection() {
@@ -23,13 +22,6 @@ export function JourneySection() {
         ref={ref}
         className="relative grid items-center gap-16 xl:grid-cols-[minmax(0,1fr)_340px] 2xl:grid-cols-[minmax(0,1.15fr)_360px]"
       >
-        <div className="kanji-ghost absolute right-6 top-0 hidden text-[8rem] leading-none 2xl:block">
-          入京
-        </div>
-        <QuoteAside
-          quote="真正被放大的不是东京，而是他与东京之间那一层忽然出现的生疏。"
-          className="absolute right-0 top-32 hidden 2xl:block"
-        />
         <motion.div
           style={{ y: mapY, scale: mapScale }}
           className="relative min-h-[520px] overflow-hidden rounded-[36px] border border-[var(--grid-line)] bg-white/30"
@@ -85,6 +77,13 @@ export function JourneySection() {
               title="然后他进入东京"
               description="离开故乡之后最先松动的，往往不是情感，而是一个人原本很自然的生活感。"
             />
+          </FadeIn>
+          <FadeIn delay={0.08}>
+            <div className="route-plaque max-w-xl rounded-[24px] p-5">
+              <p className="text-sm leading-7 text-[var(--ink-soft)]">
+                真正被放大的不是东京，而是他与东京之间那一层忽然出现的生疏。
+              </p>
+            </div>
           </FadeIn>
           {[
             "离开熟人社会",

@@ -21,14 +21,14 @@ export function JourneySection() {
     <SectionShell id="journey" index="03" className="py-24 md:py-32">
       <div
         ref={ref}
-        className="relative grid items-center gap-16 xl:grid-cols-[minmax(0,1.15fr)_360px]"
+        className="relative grid items-center gap-16 xl:grid-cols-[minmax(0,1fr)_340px] 2xl:grid-cols-[minmax(0,1.15fr)_360px]"
       >
-        <div className="kanji-ghost absolute right-6 top-0 hidden text-[8rem] leading-none xl:block">
+        <div className="kanji-ghost absolute right-8 top-16 hidden text-[6.5rem] leading-none 2xl:right-6 2xl:top-0 2xl:text-[8rem] xl:block">
           入京
         </div>
         <QuoteAside
           quote="真正被放大的不是东京，而是他与东京之间那一层忽然出现的生疏。"
-          className="absolute right-0 top-32"
+          className="absolute right-2 top-44 2xl:right-0 2xl:top-32"
         />
         <motion.div
           style={{ y: mapY, scale: mapScale }}

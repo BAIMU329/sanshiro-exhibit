@@ -19,13 +19,13 @@ const statements = [
 export function EraSection() {
   return (
     <SectionShell id="era" index="02" className="py-24 md:py-32">
-      <div className="relative grid gap-12 xl:grid-cols-[260px_minmax(0,1fr)] xl:gap-16">
-        <div className="kanji-ghost absolute right-0 top-0 hidden text-[9rem] leading-none xl:block">
+      <div className="relative grid gap-12 xl:grid-cols-[260px_minmax(0,1fr)] xl:gap-12 2xl:gap-16">
+        <div className="kanji-ghost absolute right-6 top-16 hidden text-[6.5rem] leading-none 2xl:right-0 2xl:top-0 2xl:text-[9rem] xl:block">
           時代
         </div>
         <QuoteAside
           quote="这一屏必须先稳定下来。只有世界足够稳定，一个人的摇晃才会被真正看见。"
-          className="absolute right-0 top-36"
+          className="absolute right-2 top-44 2xl:right-0 2xl:top-36"
         />
         <FadeIn>
           <div className="route-plaque relative space-y-6 rounded-[28px] p-6">

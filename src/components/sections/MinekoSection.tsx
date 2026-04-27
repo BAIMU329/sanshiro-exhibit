@@ -23,7 +23,7 @@ export function MinekoSection() {
             eyebrow="Mineko"
             title="他也开始看不清一个人"
             description="她并不遥远。真正难的是，越靠近，越难确认自己究竟看见了谁。"
-            className="relative z-10"
+            className="relative z-10 max-w-2xl"
           />
         </FadeIn>
 
@@ -125,13 +125,13 @@ export function MinekoSection() {
           </div>
         </div>
 
-        <FadeIn delay={0.3} className="relative z-10 mt-10 max-w-2xl md:ml-[30%]">
-          <p className="display-title text-3xl leading-[1.6] text-[var(--ink)] md:text-4xl">
+        <FadeIn delay={0.3} className="relative z-10 mt-12 max-w-[46rem] md:ml-[28%]">
+          <p className="display-title text-[2rem] leading-[1.55] text-[var(--ink)] md:text-[3rem] md:leading-[1.45]">
             他并不是没有靠近她。
             <br />
             只是每靠近一步，她就更像一层倒影。
           </p>
-          <p className="mt-5 max-w-xl text-sm leading-7 text-[var(--ink-soft)] md:text-base">
+          <p className="mt-6 max-w-lg text-sm leading-8 text-[var(--ink-soft)]/88 md:text-[1rem]">
             到了这里，误解已经不是偶然失手，而成了关系本身的一部分。
           </p>
         </FadeIn>

@@ -23,11 +23,12 @@ export function EchoSection() {
             eyebrow="Echo"
             title="今天再回头看"
             description="我们换了时代，却仍会在相似的地方忽然失去把握。"
+            className="max-w-2xl"
           />
         </FadeIn>
         <FadeIn delay={0.1}>
-          <div className="route-plaque max-w-2xl rounded-[28px] p-6">
-            <p className="display-title text-2xl leading-[1.7] text-[var(--ink)]">
+          <div className="route-plaque max-w-[44rem] rounded-[30px] px-6 py-7 md:px-8">
+            <p className="display-title text-[2rem] leading-[1.55] text-[var(--ink)] md:text-[3rem] md:leading-[1.45]">
               这不是简单类比。
               <br />
               只是人进入世界时，先学会的常常不是成熟，而是迟疑。
@@ -61,7 +62,7 @@ export function EchoSection() {
         </div>
         <FadeIn delay={0.2} className="text-center">
           <p className="eyebrow">结构相似，而非完全相同</p>
-          <p className="mt-4 display-title text-2xl leading-8 text-[var(--ink-soft)] md:text-3xl md:leading-10">
+          <p className="mt-5 display-title text-[1.8rem] leading-[1.55] text-[var(--ink-soft)] md:text-[2.8rem] md:leading-[1.45]">
             时代不同。
             <br />
             那一下失去把握的感觉，却仍然相似。
@@ -71,7 +72,7 @@ export function EchoSection() {
           <div className="grid gap-6 border-t border-[var(--grid-line)]/80 pt-8 md:grid-cols-[1.1fr_0.9fr_auto] md:items-end">
             <div className="space-y-3">
               <p className="eyebrow">Afterword</p>
-              <p className="text-sm leading-7 text-[var(--ink-soft)]">
+              <p className="max-w-lg text-sm leading-7 text-[var(--ink-soft)]/86">
                 一百多年过去，那些进入世界时的迟缓、失重与不确定，并没有真正离开。
               </p>
             </div>

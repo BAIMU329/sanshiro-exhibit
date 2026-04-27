@@ -58,22 +58,22 @@ export function HeroSection() {
               </div>
             </FadeIn>
             <FadeIn delay={0.28}>
-              <div className="hero-manifest max-w-2xl rounded-[28px] p-5 md:p-6">
-                <p className="text-lg leading-9 text-[var(--ink)] md:text-[1.35rem] md:leading-10">
+              <div className="hero-manifest max-w-[42rem] rounded-[32px] px-6 py-6 md:px-8 md:py-7">
+                <p className="display-title text-[2rem] leading-[1.35] text-[var(--ink)] md:text-[2.7rem] md:leading-[1.28]">
                   真正开始迷路的，不是脚步，
                   <br className="hidden md:block" />
                   而是判断世界的方法。
                 </p>
               </div>
             </FadeIn>
-            <FadeIn delay={0.36} className="max-w-xl">
-              <p className="text-base leading-8 text-[var(--ink-soft)] md:text-[1.02rem]">
+            <FadeIn delay={0.36} className="max-w-lg pl-1">
+              <p className="text-[0.95rem] leading-8 text-[var(--ink-soft)] md:text-[1rem]">
                 他到东京以后，先失去的不是故乡，
                 而是那种不必犹豫就能判断世界的能力。
               </p>
             </FadeIn>
             <FadeIn delay={0.46}>
-              <div className="grid max-w-3xl gap-4 md:grid-cols-[1.1fr_0.9fr]">
+              <div className="grid max-w-3xl gap-4 pt-2 md:grid-cols-[1.1fr_0.9fr]">
                 <div className="route-plaque rounded-[24px] p-4 md:p-5">
                   <p className="eyebrow">Route / 1909</p>
                   <div className="mt-3 flex items-center gap-4 text-sm tracking-[0.18em] text-[var(--ink-muted)] uppercase">
@@ -109,7 +109,7 @@ export function HeroSection() {
             className="hidden space-y-4 lg:block"
           >
             <FadeIn delay={0.22}>
-              <div className="hero-side-panel rounded-[30px] p-5">
+              <div className="hero-side-panel rounded-[30px] p-5 opacity-92">
                 <p className="eyebrow">Transit Log</p>
                 <div className="mt-5 space-y-5">
                   <div className="border-l border-[var(--rust)]/35 pl-4">
@@ -121,13 +121,13 @@ export function HeroSection() {
                   <div className="grid gap-3">
                     <div className="rounded-[20px] border border-[var(--grid-line)]/80 bg-white/48 p-4">
                       <p className="text-[11px] tracking-[0.18em] text-[var(--ink-muted)] uppercase">Signal 01</p>
-                      <p className="mt-2 text-sm leading-7 text-[var(--ink-soft)]">
+                      <p className="mt-2 text-sm leading-7 text-[var(--ink-soft)]/90">
                         熟悉的判断失效，比陌生的街道更让人无措。
                       </p>
                     </div>
                     <div className="rounded-[20px] border border-[var(--grid-line)]/80 bg-white/42 p-4">
                       <p className="text-[11px] tracking-[0.18em] text-[var(--ink-muted)] uppercase">Signal 02</p>
-                      <p className="mt-2 text-sm leading-7 text-[var(--ink-soft)]">
+                      <p className="mt-2 text-sm leading-7 text-[var(--ink-soft)]/82">
                         东京像一张不断扩张的线路图。
                       </p>
                     </div>

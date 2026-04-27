@@ -22,7 +22,7 @@ export function EchoSection() {
             index="09"
             eyebrow="Echo"
             title="今天再回头看"
-            description="《三四郎》并没有因为时间过去而变远。只是我们换了时代，仍会在相似的地方忽然失去把握。"
+            description="我们换了时代，却仍会在相似的地方忽然失去把握。"
           />
         </FadeIn>
         <FadeIn delay={0.1}>
@@ -72,7 +72,7 @@ export function EchoSection() {
             <div className="space-y-3">
               <p className="eyebrow">Afterword</p>
               <p className="text-sm leading-7 text-[var(--ink-soft)]">
-                一百多年过去，变化的只是表面形式；那些进入世界时的迟缓、失重与不确定，并没有真正离开。
+                一百多年过去，那些进入世界时的迟缓、失重与不确定，并没有真正离开。
               </p>
             </div>
             <div className="md:justify-self-end">

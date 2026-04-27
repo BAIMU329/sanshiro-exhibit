@@ -25,7 +25,6 @@ export function LostSection() {
             <p className="eyebrow">迷える羊</p>
             <p className="mt-2 text-sm leading-7 text-[var(--ink-soft)]">
               旧的确定感已经开始松开，新的自我却还没有长成。
-              于是迟疑留下来，像一段必须经过的空白。
             </p>
           </div>
         </FadeIn>

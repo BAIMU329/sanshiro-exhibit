@@ -82,13 +82,13 @@ export function HeroSection() {
                     <span>东京</span>
                   </div>
                   <p className="mt-4 text-sm leading-7 text-[var(--ink-soft)] md:text-[15px]">
-                    从熟人社会进入匿名都市，最先松动的不是方向，而是原来那种自然判断世界的能力。
+                    从熟人社会进入匿名都市，最先松动的不是方向，而是判断。
                   </p>
                 </div>
                 <div className="route-plaque rounded-[24px] p-4 md:p-5">
                   <p className="eyebrow">Exhibit Intent</p>
                   <p className="mt-3 text-sm leading-7 text-[var(--ink-soft)] md:text-[15px]">
-                    这里想重现的，不是情节本身，而是《三四郎》里那种人已经在场，心却仍慢半拍的感觉。
+                    人已经在场，心却仍慢半拍。
                   </p>
                 </div>
               </div>
@@ -128,7 +128,7 @@ export function HeroSection() {
                     <div className="rounded-[20px] border border-[var(--grid-line)]/80 bg-white/42 p-4">
                       <p className="text-[11px] tracking-[0.18em] text-[var(--ink-muted)] uppercase">Signal 02</p>
                       <p className="mt-2 text-sm leading-7 text-[var(--ink-soft)]">
-                        东京像一张不断扩张的线路图，而三四郎先学会的不是抵达，而是迟疑。
+                        东京像一张不断扩张的线路图。
                       </p>
                     </div>
                   </div>

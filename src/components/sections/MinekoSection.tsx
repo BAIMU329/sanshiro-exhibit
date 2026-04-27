@@ -33,7 +33,7 @@ export function MinekoSection() {
               <div className="route-plaque rounded-[24px] p-5">
                 <p className="eyebrow">gaze</p>
                 <p className="mt-3 text-sm leading-7 text-[var(--ink-soft)]">
-                  她既像人物，也像一种气候。人越试图靠近她，就越暴露出自己的判断仍未成形。
+                  她既像人物，也像一种气候。越试图靠近，判断越容易失焦。
                 </p>
               </div>
             </FadeIn>
@@ -41,7 +41,7 @@ export function MinekoSection() {
               <div className="route-plaque rounded-[24px] p-5">
                 <p className="eyebrow">distance</p>
                 <p className="mt-3 text-sm leading-7 text-[var(--ink-soft)]">
-                  水面、倒影、语言里的暗示，都让接近看起来更容易，也让真正的理解更难确认。
+                  水面、倒影、暗示，都让接近看起来更容易。
                 </p>
               </div>
             </FadeIn>
@@ -80,14 +80,14 @@ export function MinekoSection() {
             <div className="absolute left-8 top-8 max-w-[180px] rounded-[24px] border border-[var(--grid-line)]/80 bg-white/45 p-4">
               <p className="eyebrow">Misreading</p>
               <p className="mt-3 text-sm leading-7 text-[var(--ink-soft)]">
-                越靠近她，三四郎越发现自己未必在理解她，而是在摸索自己究竟看见了什么。
+                越靠近她，三四郎越发现自己未必真的看见了她。
               </p>
             </div>
 
             <div className="absolute bottom-8 right-8 max-w-[220px] rounded-[24px] border border-[var(--grid-line)]/80 bg-white/40 p-4">
               <p className="eyebrow">Afterimage</p>
               <p className="mt-3 text-sm leading-7 text-[var(--ink-soft)]">
-                她留下的不是确定答案，而是一层余影，使关系始终停留在“似乎懂了”与“其实没有”之间。
+                她留下的不是答案，而是一层余影。
               </p>
             </div>
 
@@ -132,7 +132,7 @@ export function MinekoSection() {
             只是每靠近一步，她就更像一层倒影。
           </p>
           <p className="mt-5 max-w-xl text-sm leading-7 text-[var(--ink-soft)] md:text-base">
-            到了这里，误解已经不是偶然失手，而成了关系本身的一部分。三四郎想靠近的，也许从来不只是美祢子本人。
+            到了这里，误解已经不是偶然失手，而成了关系本身的一部分。
           </p>
         </FadeIn>
       </div>

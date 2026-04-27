@@ -73,7 +73,7 @@ export function MechanismSection() {
             index="07"
             eyebrow="Mechanism"
             title="于是，世界慢慢进入他"
-            description="这里不再把困境和迷途画成一张复杂示意图，而是拆成两段更清楚的过程：先渗入，再沉积。"
+            description="困境并不只停留在外面。它会一点点渗入感觉、判断和行动里。"
           />
         </FadeIn>
 
@@ -91,9 +91,6 @@ export function MechanismSection() {
                     <p className="eyebrow">Phase 01</p>
                     <h3 className="mt-2 text-xl text-[var(--ink)] md:text-2xl">外在困境如何渗入内心</h3>
                   </div>
-                  <p className="max-w-xl text-sm leading-7 text-[var(--ink-soft)] md:text-[15px]">
-                    三四郎并不是先有迷惘，后来才遇到压力。恰恰相反，是现实条件一点点改写了他的判断方式。
-                  </p>
                 </div>
 
                 <div className="mt-6 hidden xl:block">
@@ -164,20 +161,9 @@ export function MechanismSection() {
                     <p className="eyebrow">Phase 02</p>
                     <h3 className="mt-2 text-xl text-[var(--ink)] md:text-2xl">这些反应如何沉积成“迷途”</h3>
                   </div>
-                  <p className="max-w-xl text-sm leading-7 text-[var(--ink-soft)] md:text-[15px]">
-                    这些反应不会立刻消失。它们会慢慢沉到行动和关系里，最后留下错失、停滞和未完成。
-                  </p>
                 </div>
 
-                <div className="mt-6 hidden xl:grid xl:grid-cols-[220px_1fr] xl:items-start xl:gap-7">
-                  <div className="rounded-[24px] border border-[var(--grid-line)]/70 bg-white/50 p-5">
-                    <p className="eyebrow">沉积说明</p>
-                    <p className="mt-3 text-sm leading-7 text-[var(--ink-soft)]">
-                      羞怯、犹疑、欲望投射与自我分裂，并不是平行摆着的四个词。
-                      它们会在时间里叠加，最终把青年推向一种长期悬置的状态。
-                    </p>
-                  </div>
-
+                <div className="mt-6 hidden xl:grid xl:grid-cols-[1fr] xl:items-start">
                   <div className="relative pt-8">
                     <div className="absolute left-[7%] right-[7%] top-4 border-t border-dashed border-[rgba(93,107,99,0.42)]" />
                     <div className="absolute left-1/2 top-0 -translate-x-1/2 rounded-full border border-[var(--grid-line)]/80 bg-white/65 px-4 py-2 text-[11px] tracking-[0.18em] text-[var(--ink-muted)] uppercase">

@@ -73,7 +73,7 @@ export function HeroSection() {
               </p>
             </FadeIn>
             <FadeIn delay={0.46}>
-              <div className="grid max-w-3xl gap-4 pt-2 md:grid-cols-[1.1fr_0.9fr]">
+              <div className="max-w-xl pt-2">
                 <div className="route-plaque rounded-[24px] p-4 md:p-5">
                   <p className="eyebrow">Route / 1909</p>
                   <div className="mt-3 flex items-center gap-4 text-sm tracking-[0.18em] text-[var(--ink-muted)] uppercase">
@@ -83,12 +83,6 @@ export function HeroSection() {
                   </div>
                   <p className="mt-4 text-sm leading-7 text-[var(--ink-soft)] md:text-[15px]">
                     从熟人社会进入匿名都市，最先松动的不是方向，而是判断。
-                  </p>
-                </div>
-                <div className="route-plaque rounded-[24px] p-4 md:p-5">
-                  <p className="eyebrow">Exhibit Intent</p>
-                  <p className="mt-3 text-sm leading-7 text-[var(--ink-soft)] md:text-[15px]">
-                    人已经在场，心却仍慢半拍。
                   </p>
                 </div>
               </div>
@@ -118,19 +112,11 @@ export function HeroSection() {
                       上京不只是地理移动，而是生活坐标突然改写。
                     </p>
                   </div>
-                  <div className="grid gap-3">
-                    <div className="rounded-[20px] border border-[var(--grid-line)]/80 bg-white/48 p-4">
-                      <p className="text-[11px] tracking-[0.18em] text-[var(--ink-muted)] uppercase">Signal 01</p>
-                      <p className="mt-2 text-sm leading-7 text-[var(--ink-soft)]/90">
-                        熟悉的判断失效，比陌生的街道更让人无措。
-                      </p>
-                    </div>
-                    <div className="rounded-[20px] border border-[var(--grid-line)]/80 bg-white/42 p-4">
-                      <p className="text-[11px] tracking-[0.18em] text-[var(--ink-muted)] uppercase">Signal 02</p>
-                      <p className="mt-2 text-sm leading-7 text-[var(--ink-soft)]/82">
-                        东京像一张不断扩张的线路图。
-                      </p>
-                    </div>
+                  <div className="rounded-[20px] border border-[var(--grid-line)]/80 bg-white/48 p-4">
+                    <p className="text-[11px] tracking-[0.18em] text-[var(--ink-muted)] uppercase">Signal</p>
+                    <p className="mt-2 text-sm leading-7 text-[var(--ink-soft)]/90">
+                      熟悉的判断失效，比陌生的街道更让人无措。
+                    </p>
                   </div>
                 </div>
               </div>

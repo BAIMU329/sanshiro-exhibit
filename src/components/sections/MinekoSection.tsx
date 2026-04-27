@@ -5,8 +5,6 @@ import { FadeIn } from "@/components/ui/FadeIn";
 
 const phrases = [
   { label: "被观看", className: "left-[12%] top-[24%]" },
-  { label: "不可把握", className: "right-[11%] top-[20%]" },
-  { label: "似乎靠近", className: "left-[9%] bottom-[22%]" },
   { label: "始终错位", className: "right-[9%] bottom-[19%]" },
 ];
 
@@ -37,15 +35,7 @@ export function MinekoSection() {
                 </p>
               </div>
             </FadeIn>
-            <FadeIn delay={0.2}>
-              <div className="route-plaque rounded-[24px] p-5">
-                <p className="eyebrow">distance</p>
-                <p className="mt-3 text-sm leading-7 text-[var(--ink-soft)]">
-                  水面、倒影、暗示，都让接近看起来更容易。
-                </p>
-              </div>
-            </FadeIn>
-            <FadeIn delay={0.28}>
+            <FadeIn delay={0.18}>
               <div className="rounded-[24px] border border-[var(--grid-line)]/80 bg-white/42 p-5">
                 <p className="font-[var(--font-display)] text-lg tracking-[0.24em] text-[var(--rust)]">
                   stray sheep
@@ -84,13 +74,6 @@ export function MinekoSection() {
               </p>
             </div>
 
-            <div className="absolute bottom-8 right-8 max-w-[220px] rounded-[24px] border border-[var(--grid-line)]/80 bg-white/40 p-4">
-              <p className="eyebrow">Afterimage</p>
-              <p className="mt-3 text-sm leading-7 text-[var(--ink-soft)]">
-                她留下的不是答案，而是一层余影。
-              </p>
-            </div>
-
             <div className="absolute left-1/2 top-[15%] -translate-x-1/2 text-center">
               <p className="font-[var(--font-display)] text-[1.05rem] tracking-[0.36em] text-[var(--rust)]/75 uppercase">
                 mineko
@@ -125,7 +108,7 @@ export function MinekoSection() {
           </div>
         </div>
 
-        <FadeIn delay={0.3} className="relative z-10 mt-12 max-w-[46rem] md:ml-[28%]">
+        <FadeIn delay={0.3} className="relative z-10 mt-12 max-w-[42rem] md:ml-[30%]">
           <p className="display-title text-[2rem] leading-[1.55] text-[var(--ink)] md:text-[3rem] md:leading-[1.45]">
             他并不是没有靠近她。
             <br />

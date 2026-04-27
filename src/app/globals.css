@@ -283,7 +283,7 @@ a {
   inset: 50% auto auto 50%;
   width: 260px;
   height: 110px;
-  border: 1px solid rgba(93, 107, 99, 0.22);
+  border: 1px solid rgba(93, 107, 99, 0.18);
   border-radius: 999px;
   transform: translate(-50%, -50%);
 }
@@ -296,8 +296,59 @@ a {
   filter: blur(2px);
 }
 
+.mineko-stage {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.48), rgba(255, 255, 255, 0.12)),
+    radial-gradient(circle at 58% 42%, rgba(255, 255, 255, 0.34), transparent 48%),
+    linear-gradient(180deg, rgba(24, 24, 22, 0.02), transparent 18%, transparent 84%, rgba(24, 24, 22, 0.03));
+  box-shadow: 0 28px 70px rgba(24, 24, 22, 0.06);
+  backdrop-filter: blur(8px);
+}
+
+.mineko-stage::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 55% 38%, rgba(255, 255, 255, 0.28), transparent 36%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.14), transparent 18%);
+  opacity: 0.9;
+}
+
+.mineko-axis {
+  background: linear-gradient(180deg, transparent, rgba(126, 75, 58, 0.22), transparent);
+}
+
+.mineko-axis-dark {
+  background: linear-gradient(180deg, transparent, rgba(24, 24, 22, 0.08), rgba(24, 24, 22, 0.16), transparent);
+}
+
+.mineko-silhouette {
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(24, 24, 22, 0.18), rgba(24, 24, 22, 0.03), transparent);
+  opacity: 0.38;
+  filter: blur(10px);
+}
+
+.mineko-echo {
+  border-radius: 999px;
+  border: 1px solid rgba(24, 24, 22, 0.08);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.02));
+  opacity: 0.55;
+  filter: blur(0.5px);
+}
+
+.mineko-shadow {
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(24, 24, 22, 0.06), transparent);
+  opacity: 0.28;
+  filter: blur(16px);
+}
+
 .mineko-thread {
-  border-top: 1px solid rgba(126, 75, 58, 0.18);
+  border-top: 1px solid rgba(126, 75, 58, 0.14);
   transform: rotate(-8deg);
 }
 
@@ -305,12 +356,12 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  border: 1px solid rgba(58, 56, 52, 0.08);
+  border: 1px solid rgba(58, 56, 52, 0.06);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.42);
+  background: rgba(255, 255, 255, 0.34);
   padding: 0.55rem 0.9rem;
   backdrop-filter: blur(8px);
-  box-shadow: 0 10px 24px rgba(24, 24, 22, 0.04);
+  box-shadow: 0 10px 24px rgba(24, 24, 22, 0.03);
 }
 
 .ambient-float {

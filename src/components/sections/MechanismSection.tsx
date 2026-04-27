@@ -81,10 +81,11 @@ export function MechanismSection() {
           <div className="diagram-glow left-12 top-24 h-40 w-40 bg-[rgba(126,75,58,0.2)]" />
           <div className="diagram-glow right-18 top-44 h-44 w-44 bg-[rgba(93,107,99,0.14)]" />
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(24,24,22,0.04)_1px,transparent_1px),linear-gradient(rgba(24,24,22,0.04)_1px,transparent_1px)] bg-[size:120px_120px] opacity-35" />
+          <div className="mechanism-spine absolute left-1/2 top-18 hidden h-[calc(100%-9rem)] -translate-x-1/2 xl:block" />
 
           <div className="relative space-y-8">
             <FadeIn delay={0.08}>
-              <div className="rounded-[28px] border border-[var(--grid-line)]/80 bg-white/55 p-5 backdrop-blur-sm md:p-6">
+              <div className="rounded-[28px] border border-[var(--grid-line)]/80 bg-white/55 p-5 backdrop-blur-sm md:p-6 xl:ml-10">
                 <div className="flex flex-wrap items-center justify-between gap-4 border-b border-[var(--grid-line)]/80 pb-4">
                   <div>
                     <p className="eyebrow">Phase 01</p>
@@ -157,7 +158,7 @@ export function MechanismSection() {
             </FadeIn>
 
             <FadeIn delay={0.18}>
-              <div className="rounded-[28px] border border-[var(--grid-line)]/80 bg-[rgba(248,242,232,0.82)] p-5 backdrop-blur-sm md:p-6">
+              <div className="rounded-[28px] border border-[var(--grid-line)]/80 bg-[rgba(248,242,232,0.82)] p-5 backdrop-blur-sm md:p-6 xl:mr-10">
                 <div className="flex flex-wrap items-center justify-between gap-4 border-b border-[var(--grid-line)]/80 pb-4">
                   <div>
                     <p className="eyebrow">Phase 02</p>
@@ -168,7 +169,7 @@ export function MechanismSection() {
                   </p>
                 </div>
 
-                <div className="mt-6 hidden xl:grid xl:grid-cols-[190px_1fr] xl:items-start xl:gap-6">
+                <div className="mt-6 hidden xl:grid xl:grid-cols-[220px_1fr] xl:items-start xl:gap-7">
                   <div className="rounded-[24px] border border-[var(--grid-line)]/70 bg-white/50 p-5">
                     <p className="eyebrow">沉积说明</p>
                     <p className="mt-3 text-sm leading-7 text-[var(--ink-soft)]">
@@ -178,12 +179,15 @@ export function MechanismSection() {
                   </div>
 
                   <div className="relative pt-8">
-                    <div className="absolute left-[9%] right-[9%] top-4 border-t border-dashed border-[rgba(93,107,99,0.42)]" />
+                    <div className="absolute left-[7%] right-[7%] top-4 border-t border-dashed border-[rgba(93,107,99,0.42)]" />
+                    <div className="absolute left-1/2 top-0 -translate-x-1/2 rounded-full border border-[var(--grid-line)]/80 bg-white/65 px-4 py-2 text-[11px] tracking-[0.18em] text-[var(--ink-muted)] uppercase">
+                      沉积 / suspension
+                    </div>
                     <div className="grid grid-cols-3 gap-4">
                       {outcomeNotes.map((item, index) => (
                         <FadeIn key={item.label} delay={0.12 * (index + 1)} className="relative">
                           <div className="absolute left-1/2 top-[-16px] h-4 -translate-x-1/2 border-l border-dashed border-[rgba(93,107,99,0.42)]" />
-                          <div className="rounded-[24px] border border-[var(--grid-line)]/80 bg-white/58 p-5 text-center">
+                          <div className="rounded-[24px] border border-[var(--grid-line)]/80 bg-white/58 p-5 text-center shadow-[0_16px_40px_rgba(24,24,22,0.04)]">
                             <MechanismNode label={item.label} variant="outcome" className="min-h-[72px]" />
                             <p className="mt-4 text-sm leading-7 text-[var(--ink-soft)]">{item.note}</p>
                           </div>

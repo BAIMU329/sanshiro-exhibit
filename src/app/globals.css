@@ -164,6 +164,67 @@ a {
   backdrop-filter: blur(10px);
 }
 
+.hero-manifest {
+  border: 1px solid rgba(126, 75, 58, 0.18);
+  background:
+    linear-gradient(120deg, rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.18)),
+    rgba(255, 255, 255, 0.26);
+  box-shadow: 0 20px 60px rgba(24, 24, 22, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.hero-side-panel {
+  border: 1px solid rgba(58, 56, 52, 0.14);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.62), rgba(255, 255, 255, 0.24)),
+    rgba(255, 255, 255, 0.34);
+  box-shadow: 0 22px 52px rgba(24, 24, 22, 0.06);
+  backdrop-filter: blur(12px);
+}
+
+.hero-route-line {
+  background: linear-gradient(90deg, rgba(126, 75, 58, 0.6), rgba(93, 107, 99, 0.22));
+}
+
+.hero-rail-perspective {
+  background:
+    linear-gradient(122deg, transparent 42%, rgba(93, 107, 99, 0.07) 48%, transparent 54%),
+    linear-gradient(67deg, transparent 40%, rgba(126, 75, 58, 0.08) 47%, transparent 54%);
+}
+
+.hero-rail-perspective::before,
+.hero-rail-perspective::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 2px;
+  height: 90%;
+  background: linear-gradient(180deg, rgba(126, 75, 58, 0.04), rgba(126, 75, 58, 0.55));
+  transform-origin: bottom;
+  filter: blur(0.2px);
+}
+
+.hero-rail-perspective::before {
+  left: 34%;
+  transform: skewX(30deg);
+}
+
+.hero-rail-perspective::after {
+  right: 24%;
+  transform: skewX(-30deg);
+}
+
+.hero-city-band {
+  background:
+    linear-gradient(90deg, transparent, rgba(24, 24, 22, 0.08) 18%, transparent 28%),
+    linear-gradient(90deg, transparent 10%, rgba(24, 24, 22, 0.05) 10%, rgba(24, 24, 22, 0.05) 12%, transparent 12%),
+    linear-gradient(90deg, transparent 26%, rgba(24, 24, 22, 0.04) 26%, rgba(24, 24, 22, 0.04) 29%, transparent 29%),
+    linear-gradient(90deg, transparent 42%, rgba(24, 24, 22, 0.05) 42%, rgba(24, 24, 22, 0.05) 46%, transparent 46%),
+    linear-gradient(90deg, transparent 60%, rgba(24, 24, 22, 0.04) 60%, rgba(24, 24, 22, 0.04) 63%, transparent 63%),
+    linear-gradient(90deg, transparent 76%, rgba(24, 24, 22, 0.05) 76%, rgba(24, 24, 22, 0.05) 80%, transparent 80%);
+  mask-image: linear-gradient(180deg, transparent, black 24%, black 70%, transparent);
+}
+
 .kanji-ghost {
   font-family: var(--font-serif-sc), serif;
   color: rgba(24, 24, 22, 0.05);
@@ -201,6 +262,31 @@ a {
   transform: translate(-50%, -50%);
 }
 
+.mineko-reflection {
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.34), transparent 58%),
+    radial-gradient(circle at 50% 54%, rgba(93, 107, 99, 0.08), transparent 70%);
+  filter: blur(2px);
+}
+
+.mineko-thread {
+  border-top: 1px solid rgba(126, 75, 58, 0.18);
+  transform: rotate(-8deg);
+}
+
+.mineko-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  border: 1px solid rgba(58, 56, 52, 0.08);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.42);
+  padding: 0.55rem 0.9rem;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 24px rgba(24, 24, 22, 0.04);
+}
+
 .ambient-float {
   animation: ambient-float 12s ease-in-out infinite;
 }
@@ -211,6 +297,11 @@ a {
 
 .ambient-drift {
   animation: ambient-drift 18s ease-in-out infinite;
+}
+
+.mechanism-spine {
+  width: 1px;
+  background: linear-gradient(180deg, transparent, rgba(126, 75, 58, 0.18) 16%, rgba(93, 107, 99, 0.18) 84%, transparent);
 }
 
 @keyframes ambient-float {

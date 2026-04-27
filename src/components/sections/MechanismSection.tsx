@@ -6,23 +6,73 @@ import { MechanismNode } from "@/components/ui/MechanismNode";
 import { mechanism } from "@/data/site";
 
 const constraintNodes = [
-  { label: mechanism.constraints[0], x: 170, y: 88, delay: 0 },
-  { label: mechanism.constraints[1], x: 170, y: 200, delay: 0.1 },
-  { label: mechanism.constraints[2], x: 170, y: 312, delay: 0.2 },
-  { label: mechanism.constraints[3], x: 170, y: 424, delay: 0.3 },
+  { label: mechanism.constraints[0], x: 170, y: 88, width: 190, delay: 0 },
+  { label: mechanism.constraints[1], x: 170, y: 200, width: 190, delay: 0.1 },
+  { label: mechanism.constraints[2], x: 170, y: 312, width: 190, delay: 0.2 },
+  { label: mechanism.constraints[3], x: 170, y: 424, width: 190, delay: 0.3 },
 ];
 
 const interiorNodes = [
-  { label: mechanism.interior[0], x: 470, y: 88, delay: 0.12 },
-  { label: mechanism.interior[1], x: 500, y: 174, delay: 0.24 },
-  { label: mechanism.interior[2], x: 470, y: 286, delay: 0.36 },
-  { label: mechanism.interior[3], x: 500, y: 398, delay: 0.48 },
+  { label: mechanism.interior[0], x: 470, y: 88, width: 164, delay: 0.12 },
+  { label: mechanism.interior[1], x: 500, y: 174, width: 164, delay: 0.24 },
+  { label: mechanism.interior[2], x: 470, y: 286, width: 164, delay: 0.36 },
+  { label: mechanism.interior[3], x: 500, y: 398, width: 164, delay: 0.48 },
 ];
 
 const outcomeNodes = [
-  { label: mechanism.outcomes[0], x: 814, y: 140, delay: 0.32 },
-  { label: mechanism.outcomes[1], x: 850, y: 260, delay: 0.48 },
-  { label: mechanism.outcomes[2], x: 810, y: 388, delay: 0.64 },
+  { label: mechanism.outcomes[0], x: 814, y: 140, width: 170, delay: 0.32 },
+  { label: mechanism.outcomes[1], x: 850, y: 260, width: 170, delay: 0.48 },
+  { label: mechanism.outcomes[2], x: 810, y: 388, width: 170, delay: 0.64 },
+];
+
+function rightEdge(node: { x: number; width: number }) {
+  return node.x + node.width / 2;
+}
+
+function leftEdge(node: { x: number; width: number }) {
+  return node.x - node.width / 2;
+}
+
+function curvePath(
+  start: { x: number; y: number },
+  end: { x: number; y: number },
+  bend = 0.38,
+) {
+  const delta = end.x - start.x;
+  const c1 = start.x + delta * bend;
+  const c2 = end.x - delta * bend;
+  return `M${start.x} ${start.y}C${c1} ${start.y} ${c2} ${end.y} ${end.x} ${end.y}`;
+}
+
+const constraintPaths = constraintNodes.map((fromNode, index) =>
+  curvePath(
+    { x: rightEdge(fromNode), y: fromNode.y },
+    { x: leftEdge(interiorNodes[index]), y: interiorNodes[index].y },
+    0.34,
+  ),
+);
+
+const outcomePaths = [
+  curvePath(
+    { x: rightEdge(interiorNodes[0]), y: interiorNodes[0].y },
+    { x: leftEdge(outcomeNodes[0]), y: outcomeNodes[0].y },
+    0.36,
+  ),
+  curvePath(
+    { x: rightEdge(interiorNodes[1]), y: interiorNodes[1].y },
+    { x: leftEdge(outcomeNodes[1]), y: outcomeNodes[1].y },
+    0.34,
+  ),
+  curvePath(
+    { x: rightEdge(interiorNodes[2]), y: interiorNodes[2].y },
+    { x: leftEdge(outcomeNodes[2]), y: outcomeNodes[2].y - 14 },
+    0.36,
+  ),
+  curvePath(
+    { x: rightEdge(interiorNodes[3]), y: interiorNodes[3].y },
+    { x: leftEdge(outcomeNodes[2]), y: outcomeNodes[2].y + 12 },
+    0.32,
+  ),
 ];
 
 export function MechanismSection() {
@@ -55,50 +105,25 @@ export function MechanismSection() {
               fill="none"
               aria-hidden="true"
             >
-              <path
-                d="M170 88C292 88 336 88 470 88"
-                stroke="rgba(58,56,52,0.45)"
-                strokeWidth="2"
-              />
-              <path
-                d="M170 200C300 200 352 186 500 174"
-                stroke="rgba(58,56,52,0.45)"
-                strokeWidth="2"
-              />
-              <path
-                d="M170 312C298 312 350 300 470 286"
-                stroke="rgba(58,56,52,0.45)"
-                strokeWidth="2"
-              />
-              <path
-                d="M170 424C296 424 350 420 500 398"
-                stroke="rgba(58,56,52,0.45)"
-                strokeWidth="2"
-              />
-              <path
-                d="M470 88C620 96 706 108 814 140"
-                stroke="rgba(93,107,99,0.3)"
-                strokeWidth="2"
-                strokeDasharray="8 10"
-              />
-              <path
-                d="M500 174C648 196 740 220 850 260"
-                stroke="rgba(93,107,99,0.3)"
-                strokeWidth="2"
-                strokeDasharray="8 10"
-              />
-              <path
-                d="M470 286C628 304 718 334 810 388"
-                stroke="rgba(93,107,99,0.3)"
-                strokeWidth="2"
-                strokeDasharray="8 10"
-              />
-              <path
-                d="M500 398C646 394 726 390 810 388"
-                stroke="rgba(93,107,99,0.22)"
-                strokeWidth="2"
-                strokeDasharray="8 10"
-              />
+              {constraintPaths.map((pathData, index) => (
+                <path
+                  key={`constraint-path-${index}`}
+                  d={pathData}
+                  stroke="rgba(58,56,52,0.45)"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+              ))}
+              {outcomePaths.map((pathData, index) => (
+                <path
+                  key={`outcome-path-${index}`}
+                  d={pathData}
+                  stroke={index === 3 ? "rgba(93,107,99,0.22)" : "rgba(93,107,99,0.3)"}
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeDasharray="8 10"
+                />
+              ))}
 
               {constraintNodes.map((node) => (
                 <circle key={`constraint-${node.label}`} cx={node.x} cy={node.y} r="4" fill="#7E4B3A" />

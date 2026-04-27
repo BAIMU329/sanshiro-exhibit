@@ -1,79 +1,68 @@
-import type { CSSProperties } from "react";
 import { SectionHeader } from "@/components/layout/SectionHeader";
 import { SectionShell } from "@/components/layout/SectionShell";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { MechanismNode } from "@/components/ui/MechanismNode";
 import { mechanism } from "@/data/site";
 
-const constraintNodes = [
-  { label: mechanism.constraints[0], x: 170, y: 88, width: 190, delay: 0 },
-  { label: mechanism.constraints[1], x: 170, y: 200, width: 190, delay: 0.1 },
-  { label: mechanism.constraints[2], x: 170, y: 312, width: 190, delay: 0.2 },
-  { label: mechanism.constraints[3], x: 170, y: 424, width: 190, delay: 0.3 },
-];
+const mechanismRows = [
+  {
+    constraint: mechanism.constraints[0],
+    reaction: mechanism.interior[0],
+    bridge: "支撑未断，独立先迟到",
+  },
+  {
+    constraint: mechanism.constraints[1],
+    reaction: mechanism.interior[1],
+    bridge: "自由被想象，行动却缩回去",
+  },
+  {
+    constraint: mechanism.constraints[2],
+    reaction: mechanism.interior[2],
+    bridge: "比较越密，内心越容易摇晃",
+  },
+  {
+    constraint: mechanism.constraints[3],
+    reaction: mechanism.interior[3],
+    bridge: "规则不明说，只能靠误读摸索",
+  },
+] as const;
 
-const interiorNodes = [
-  { label: mechanism.interior[0], x: 470, y: 88, width: 164, delay: 0.12 },
-  { label: mechanism.interior[1], x: 500, y: 174, width: 164, delay: 0.24 },
-  { label: mechanism.interior[2], x: 470, y: 286, width: 164, delay: 0.36 },
-  { label: mechanism.interior[3], x: 500, y: 398, width: 164, delay: 0.48 },
-];
+const outcomeNotes = [
+  {
+    label: mechanism.outcomes[0],
+    note: "靠近并没有真正抵达，于是关系总在临门处松开。",
+  },
+  {
+    label: mechanism.outcomes[1],
+    note: "判断被拖延，想法很多，动作却越来越轻。",
+  },
+  {
+    label: mechanism.outcomes[2],
+    note: "最后留下的不是答案，而是一种尚未完成的自我。",
+  },
+] as const;
 
-const outcomeNodes = [
-  { label: mechanism.outcomes[0], x: 814, y: 140, width: 170, delay: 0.32 },
-  { label: mechanism.outcomes[1], x: 850, y: 260, width: 170, delay: 0.48 },
-  { label: mechanism.outcomes[2], x: 810, y: 388, width: 170, delay: 0.64 },
-];
-
-function rightEdge(node: { x: number; width: number }) {
-  return node.x + node.width / 2;
+function FlowBar({ dashed = false }: { dashed?: boolean }) {
+  return (
+    <div className="relative flex h-full min-h-[88px] items-center justify-center">
+      <div
+        className={[
+          "absolute left-3 right-3 top-1/2 -translate-y-1/2 border-t",
+          dashed
+            ? "border-dashed border-[rgba(93,107,99,0.46)]"
+            : "border-[rgba(58,56,52,0.34)]",
+        ].join(" ")}
+      />
+      <span className="absolute left-2 top-1/2 h-2 w-2 -translate-y-1/2 rounded-full bg-[var(--umber)]" />
+      <span
+        className={[
+          "absolute right-2 top-1/2 h-2 w-2 -translate-y-1/2 rounded-full",
+          dashed ? "bg-[var(--moss)]" : "bg-[var(--ink-soft)]",
+        ].join(" ")}
+      />
+    </div>
+  );
 }
-
-function leftEdge(node: { x: number; width: number }) {
-  return node.x - node.width / 2;
-}
-
-function curvePath(
-  start: { x: number; y: number },
-  end: { x: number; y: number },
-  bend = 0.38,
-) {
-  const delta = end.x - start.x;
-  const c1 = start.x + delta * bend;
-  const c2 = end.x - delta * bend;
-  return `M${start.x} ${start.y}C${c1} ${start.y} ${c2} ${end.y} ${end.x} ${end.y}`;
-}
-
-const constraintPaths = constraintNodes.map((fromNode, index) =>
-  curvePath(
-    { x: rightEdge(fromNode), y: fromNode.y },
-    { x: leftEdge(interiorNodes[index]), y: interiorNodes[index].y },
-    0.34,
-  ),
-);
-
-const outcomePaths = [
-  curvePath(
-    { x: rightEdge(interiorNodes[0]), y: interiorNodes[0].y },
-    { x: leftEdge(outcomeNodes[0]), y: outcomeNodes[0].y },
-    0.36,
-  ),
-  curvePath(
-    { x: rightEdge(interiorNodes[1]), y: interiorNodes[1].y },
-    { x: leftEdge(outcomeNodes[1]), y: outcomeNodes[1].y },
-    0.34,
-  ),
-  curvePath(
-    { x: rightEdge(interiorNodes[2]), y: interiorNodes[2].y },
-    { x: leftEdge(outcomeNodes[2]), y: outcomeNodes[2].y - 14 },
-    0.36,
-  ),
-  curvePath(
-    { x: rightEdge(interiorNodes[3]), y: interiorNodes[3].y },
-    { x: leftEdge(outcomeNodes[2]), y: outcomeNodes[2].y + 12 },
-    0.32,
-  ),
-];
 
 export function MechanismSection() {
   return (
@@ -84,154 +73,145 @@ export function MechanismSection() {
             index="07"
             eyebrow="Mechanism"
             title="于是，世界慢慢进入他"
-            description="在这部小说里，时代并不只是远远地压在青年身上。它会一点点渗进他的感觉、判断和行动里。"
+            description="这里不再把困境和迷途画成一张复杂示意图，而是拆成两段更清楚的过程：先渗入，再沉积。"
           />
         </FadeIn>
 
         <div className="paper-panel relative overflow-hidden rounded-[36px] px-6 py-12 md:px-10 md:py-14">
-          <div className="diagram-glow left-12 top-24 h-40 w-40 bg-[rgba(126,75,58,0.22)]" />
-          <div className="diagram-glow right-20 top-40 h-44 w-44 bg-[rgba(93,107,99,0.18)]" />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(24,24,22,0.04)_1px,transparent_1px),linear-gradient(rgba(24,24,22,0.04)_1px,transparent_1px)] bg-[size:120px_120px] opacity-40" />
-          <div className="relative hidden px-4 pb-8 xl:grid xl:grid-cols-[180px_1fr_160px] xl:gap-8">
-            <p className="eyebrow">现实困境</p>
-            <p className="eyebrow text-center">精神反应</p>
-            <p className="eyebrow text-right">迷途状态</p>
-          </div>
+          <div className="diagram-glow left-12 top-24 h-40 w-40 bg-[rgba(126,75,58,0.2)]" />
+          <div className="diagram-glow right-18 top-44 h-44 w-44 bg-[rgba(93,107,99,0.14)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(24,24,22,0.04)_1px,transparent_1px),linear-gradient(rgba(24,24,22,0.04)_1px,transparent_1px)] bg-[size:120px_120px] opacity-35" />
 
-          <div className="relative hidden min-h-[520px] xl:block">
-            <svg
-              className="pointer-events-none absolute inset-0 h-full w-full"
-              viewBox="0 0 1000 520"
-              fill="none"
-              aria-hidden="true"
-            >
-              {constraintPaths.map((pathData, index) => (
-                <path
-                  key={`constraint-path-${index}`}
-                  d={pathData}
-                  stroke="rgba(58,56,52,0.45)"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
-              ))}
-              {outcomePaths.map((pathData, index) => (
-                <path
-                  key={`outcome-path-${index}`}
-                  d={pathData}
-                  stroke={index === 3 ? "rgba(93,107,99,0.22)" : "rgba(93,107,99,0.3)"}
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeDasharray="8 10"
-                />
-              ))}
+          <div className="relative space-y-8">
+            <FadeIn delay={0.08}>
+              <div className="rounded-[28px] border border-[var(--grid-line)]/80 bg-white/55 p-5 backdrop-blur-sm md:p-6">
+                <div className="flex flex-wrap items-center justify-between gap-4 border-b border-[var(--grid-line)]/80 pb-4">
+                  <div>
+                    <p className="eyebrow">Phase 01</p>
+                    <h3 className="mt-2 text-xl text-[var(--ink)] md:text-2xl">外在困境如何渗入内心</h3>
+                  </div>
+                  <p className="max-w-xl text-sm leading-7 text-[var(--ink-soft)] md:text-[15px]">
+                    三四郎并不是先有抽象的迷惘，后来才遇到现实压力。恰恰相反，是现实条件一步步改变了他的判断方式。
+                  </p>
+                </div>
 
-              {constraintNodes.map((node) => (
-                <circle key={`constraint-${node.label}`} cx={node.x} cy={node.y} r="4" fill="#7E4B3A" />
-              ))}
-              {interiorNodes.map((node) => (
-                <circle key={`interior-${node.label}`} cx={node.x} cy={node.y} r="4" fill="#5D6B63" />
-              ))}
-              {outcomeNodes.map((node) => (
-                <circle
-                  key={`outcome-${node.label}`}
-                  cx={node.x}
-                  cy={node.y}
-                  r="4"
-                  fill="rgba(93,107,99,0.7)"
-                />
-              ))}
-            </svg>
+                <div className="mt-6 hidden xl:block">
+                  <div className="grid grid-cols-[minmax(0,1fr)_84px_minmax(0,0.95fr)] items-center gap-x-4 px-2 pb-4">
+                    <p className="eyebrow">现实困境</p>
+                    <p className="eyebrow text-center">渗入</p>
+                    <p className="eyebrow text-right">精神反应</p>
+                  </div>
 
-            {constraintNodes.map((node) => (
-              <FadeIn
-                key={node.label}
-                delay={node.delay}
-                className="absolute -translate-x-1/2 -translate-y-1/2"
-                style={{
-                  left: `${(node.x / 1000) * 100}%`,
-                  top: `${(node.y / 520) * 100}%`,
-                } as CSSProperties}
-              >
-                <MechanismNode label={node.label} variant="constraint" className="w-[190px]" />
-              </FadeIn>
-            ))}
+                  <div className="space-y-4">
+                    {mechanismRows.map((row, index) => (
+                      <FadeIn
+                        key={row.constraint}
+                        delay={0.08 * index}
+                        className="grid grid-cols-[minmax(0,1fr)_84px_minmax(0,0.95fr)] items-center gap-x-4"
+                      >
+                        <MechanismNode
+                          label={row.constraint}
+                          variant="constraint"
+                          className="min-h-[88px] px-6 py-5 text-left"
+                        />
 
-            {interiorNodes.map((node) => (
-              <FadeIn
-                key={node.label}
-                delay={node.delay}
-                className="absolute -translate-x-1/2 -translate-y-1/2"
-                style={{
-                  left: `${(node.x / 1000) * 100}%`,
-                  top: `${(node.y / 520) * 100}%`,
-                } as CSSProperties}
-              >
-                <MechanismNode label={node.label} variant="interior" className="w-[164px]" />
-              </FadeIn>
-            ))}
+                        <div className="relative h-full">
+                          <FlowBar />
+                          <div className="absolute inset-x-0 bottom-1 text-center text-[10px] tracking-[0.14em] text-[var(--ink-muted)]">
+                            {row.bridge}
+                          </div>
+                        </div>
 
-            {outcomeNodes.map((node) => (
-              <FadeIn
-                key={node.label}
-                delay={node.delay}
-                className="absolute -translate-x-1/2 -translate-y-1/2"
-                style={{
-                  left: `${(node.x / 1000) * 100}%`,
-                  top: `${(node.y / 520) * 100}%`,
-                } as CSSProperties}
-              >
-                <MechanismNode label={node.label} variant="outcome" className="w-[170px]" />
-              </FadeIn>
-            ))}
+                        <MechanismNode
+                          label={row.reaction}
+                          variant="interior"
+                          className="min-h-[74px] px-6 py-5"
+                        />
+                      </FadeIn>
+                    ))}
+                  </div>
+                </div>
 
-            <div className="absolute left-[46%] top-[46%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[var(--grid-line)]/80 bg-white/50 px-3 py-2 text-[11px] tracking-[0.16em] text-[var(--ink-muted)] backdrop-blur-sm">
-              structure → response
-            </div>
-
-            <div className="absolute right-3 top-[17%] max-w-[180px] text-right">
-              <p className="eyebrow">Suspension</p>
-              <p className="mt-2 text-sm leading-7 text-[var(--ink-soft)]">
-                越靠近结果，行动越变得稀薄，关系开始以“未完成”的方式存在。
-              </p>
-            </div>
-          </div>
-
-          <div className="relative grid gap-8 xl:hidden">
-            <div className="space-y-4">
-              <p className="eyebrow">现实困境</p>
-              <div className="grid gap-3">
-                {mechanism.constraints.map((label) => (
-                  <MechanismNode key={label} label={label} variant="constraint" />
-                ))}
+                <div className="grid gap-5 xl:hidden">
+                  {mechanismRows.map((row, index) => (
+                    <FadeIn key={row.constraint} delay={0.08 * index}>
+                      <div className="rounded-[24px] border border-[var(--grid-line)]/80 bg-white/45 p-4">
+                        <div className="grid gap-3">
+                          <div>
+                            <p className="eyebrow mb-2">现实困境</p>
+                            <MechanismNode label={row.constraint} variant="constraint" />
+                          </div>
+                          <div className="rounded-full border border-[var(--grid-line)]/70 bg-[var(--paper)]/90 px-4 py-2 text-center text-xs leading-6 tracking-[0.08em] text-[var(--ink-muted)]">
+                            {row.bridge}
+                          </div>
+                          <div>
+                            <p className="eyebrow mb-2">精神反应</p>
+                            <MechanismNode label={row.reaction} variant="interior" />
+                          </div>
+                        </div>
+                      </div>
+                    </FadeIn>
+                  ))}
+                </div>
               </div>
-            </div>
-            <div className="space-y-4">
-              <p className="eyebrow">精神反应</p>
-              <div className="grid gap-3">
-                {mechanism.interior.map((label) => (
-                  <MechanismNode key={label} label={label} variant="interior" />
-                ))}
-              </div>
-            </div>
-            <div className="space-y-4">
-              <p className="eyebrow">迷途状态</p>
-              <div className="grid gap-3">
-                {mechanism.outcomes.map((label) => (
-                  <MechanismNode key={label} label={label} variant="outcome" />
-                ))}
-              </div>
-            </div>
+            </FadeIn>
 
-            <div className="absolute left-[31%] top-[44%] rounded-full border border-[var(--grid-line)]/80 bg-white/40 px-3 py-2 text-[11px] tracking-[0.16em] text-[var(--ink-muted)] backdrop-blur-sm">
-              structure → response
-            </div>
+            <FadeIn delay={0.18}>
+              <div className="rounded-[28px] border border-[var(--grid-line)]/80 bg-[rgba(248,242,232,0.82)] p-5 backdrop-blur-sm md:p-6">
+                <div className="flex flex-wrap items-center justify-between gap-4 border-b border-[var(--grid-line)]/80 pb-4">
+                  <div>
+                    <p className="eyebrow">Phase 02</p>
+                    <h3 className="mt-2 text-xl text-[var(--ink)] md:text-2xl">这些反应如何沉积成“迷途”</h3>
+                  </div>
+                  <p className="max-w-xl text-sm leading-7 text-[var(--ink-soft)] md:text-[15px]">
+                    情绪不会立刻消失，它们会慢慢沉到行动和关系里，最后表现为错失、停滞和未完成。
+                  </p>
+                </div>
 
-            <div className="absolute right-[14%] top-[18%] max-w-[180px] text-right">
-              <p className="eyebrow">Suspension</p>
-              <p className="mt-2 text-sm leading-7 text-[var(--ink-soft)]">
-                越靠近结果，行动越变得稀薄，关系开始以“未完成”的方式存在。
-              </p>
-            </div>
+                <div className="mt-6 hidden xl:grid xl:grid-cols-[190px_1fr] xl:items-start xl:gap-6">
+                  <div className="rounded-[24px] border border-[var(--grid-line)]/70 bg-white/50 p-5">
+                    <p className="eyebrow">沉积说明</p>
+                    <p className="mt-3 text-sm leading-7 text-[var(--ink-soft)]">
+                      羞怯、犹疑、欲望投射与自我分裂，并不是平行摆着的四个词。
+                      它们会在时间里叠加，最终把青年推向一种长期悬置的状态。
+                    </p>
+                  </div>
+
+                  <div className="relative pt-8">
+                    <div className="absolute left-[9%] right-[9%] top-4 border-t border-dashed border-[rgba(93,107,99,0.42)]" />
+                    <div className="grid grid-cols-3 gap-4">
+                      {outcomeNotes.map((item, index) => (
+                        <FadeIn key={item.label} delay={0.12 * (index + 1)} className="relative">
+                          <div className="absolute left-1/2 top-[-16px] h-4 -translate-x-1/2 border-l border-dashed border-[rgba(93,107,99,0.42)]" />
+                          <div className="rounded-[24px] border border-[var(--grid-line)]/80 bg-white/58 p-5 text-center">
+                            <MechanismNode label={item.label} variant="outcome" className="min-h-[72px]" />
+                            <p className="mt-4 text-sm leading-7 text-[var(--ink-soft)]">{item.note}</p>
+                          </div>
+                        </FadeIn>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="grid gap-4 xl:hidden">
+                  {outcomeNotes.map((item, index) => (
+                    <FadeIn key={item.label} delay={0.12 * (index + 1)}>
+                      <div className="rounded-[24px] border border-[var(--grid-line)]/80 bg-white/56 p-4">
+                        <div className="flex items-center gap-3">
+                          <div className="w-12 shrink-0">
+                            <FlowBar dashed />
+                          </div>
+                          <div className="flex-1">
+                            <MechanismNode label={item.label} variant="outcome" />
+                          </div>
+                        </div>
+                        <p className="mt-4 text-sm leading-7 text-[var(--ink-soft)]">{item.note}</p>
+                      </div>
+                    </FadeIn>
+                  ))}
+                </div>
+              </div>
+            </FadeIn>
           </div>
         </div>
 
@@ -239,10 +219,10 @@ export function MechanismSection() {
           <p className="display-title text-3xl leading-[1.6] text-[var(--ink)] md:text-4xl">
             世界并不只是包围着他。
             <br />
-            它会慢慢进入他，改变他的迟疑、靠近与错失。
+            它会先改变他的判断，再慢慢改变他的命运形状。
           </p>
           <p className="mt-4 text-sm leading-7 text-[var(--ink-soft)] md:text-base">
-            {"“困境 -> 冲突 -> 迷途”在这里不是僵硬公式，而更像小说里一圈圈扩散开的波纹。"}
+            {"这里的机制不是冷冰冰的流程图，而是《三四郎》里现实如何一点点进入精神生活的轨迹。"}
           </p>
         </FadeIn>
       </div>

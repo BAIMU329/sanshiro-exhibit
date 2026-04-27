@@ -22,7 +22,7 @@ export function MinekoSection() {
             index="06"
             eyebrow="Mineko"
             title="他也开始看不清一个人"
-            description="她并不只是一个人物。她更像一种让人不断靠近、又不断失去把握的存在。"
+            description="她并不遥远。真正难的是，越靠近，越难确认自己究竟看见了谁。"
             className="relative z-10"
           />
         </FadeIn>
@@ -52,7 +52,7 @@ export function MinekoSection() {
                 </p>
                 <p className="mt-3 text-sm leading-7 text-[var(--ink-soft)]">
                   这并不只是调情式称呼。它更像一句温柔却锋利的判断：
-                  他们都还没有真正找到自己要站的位置。
+                  他们都还在寻找自己该站的位置。
                 </p>
               </div>
             </FadeIn>
@@ -129,10 +129,10 @@ export function MinekoSection() {
           <p className="display-title text-3xl leading-[1.6] text-[var(--ink)] md:text-4xl">
             他并不是没有靠近她。
             <br />
-            只是越靠近，越难确认自己究竟看见了谁。
+            只是每靠近一步，她就更像一层倒影。
           </p>
           <p className="mt-5 max-w-xl text-sm leading-7 text-[var(--ink-soft)] md:text-base">
-            到了这里，关系已经不再只是关系。它开始暴露一个青年如何理解他人，也如何在理解他人的途中误解自己。
+            到了这里，误解已经不是偶然失手，而成了关系本身的一部分。三四郎想靠近的，也许从来不只是美祢子本人。
           </p>
         </FadeIn>
       </div>

@@ -15,17 +15,17 @@ export function LostSection() {
         </FadeIn>
         <FadeIn delay={0.25} className="mt-10 max-w-2xl">
           <p className="text-lg leading-9 text-[var(--ink-soft)] md:text-2xl md:leading-10">
-            它不是答案。
+            它不是失败。
             <br />
-            只是一种尚未完成的状态。
+            是一个人还没有长成自己时，最诚实的形状。
           </p>
         </FadeIn>
         <FadeIn delay={0.35} className="mt-10">
           <div className="route-plaque rounded-[24px] px-5 py-4">
             <p className="eyebrow">迷える羊</p>
             <p className="mt-2 text-sm leading-7 text-[var(--ink-soft)]">
-              当旧的确定感已经开始松动，而新的自我还没有真正长出来时，
-              迟疑本身也许就是成长的一部分。
+              旧的确定感已经开始松开，新的自我却还没有长成。
+              于是迟疑留下来，像一段必须经过的空白。
             </p>
           </div>
         </FadeIn>

@@ -22,7 +22,7 @@ export function EchoSection() {
             index="09"
             eyebrow="Echo"
             title="今天再回头看"
-            description="《三四郎》并没有因为时间过去而变远。它只是换了一种方式，继续照见今天的青年。"
+            description="《三四郎》并没有因为时间过去而变远。只是我们换了时代，仍会在相似的地方忽然失去把握。"
           />
         </FadeIn>
         <FadeIn delay={0.1}>
@@ -30,7 +30,7 @@ export function EchoSection() {
             <p className="display-title text-2xl leading-[1.7] text-[var(--ink)]">
               这不是简单类比。
               <br />
-              只是有些青年进入世界时的摇晃，至今仍然熟悉。
+              只是人进入世界时，先学会的常常不是成熟，而是迟疑。
             </p>
           </div>
         </FadeIn>
@@ -62,7 +62,9 @@ export function EchoSection() {
         <FadeIn delay={0.2} className="text-center">
           <p className="eyebrow">结构相似，而非完全相同</p>
           <p className="mt-4 display-title text-2xl leading-8 text-[var(--ink-soft)] md:text-3xl md:leading-10">
-            时代不同，迷途仍然发生。
+            时代不同。
+            <br />
+            那一下失去把握的感觉，却仍然相似。
           </p>
         </FadeIn>
         <FadeIn delay={0.28}>

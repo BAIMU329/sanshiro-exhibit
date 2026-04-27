@@ -68,8 +68,8 @@ export function HeroSection() {
             </FadeIn>
             <FadeIn delay={0.36} className="max-w-xl">
               <p className="text-base leading-8 text-[var(--ink-soft)] md:text-[1.02rem]">
-                从熊本到东京，并不只是一次升学。
-                更像旧的判断开始失效，而新的判断还没有真正长出来。
+                他到东京以后，先失去的不是故乡，
+                而是那种不必犹豫就能判断世界的能力。
               </p>
             </FadeIn>
             <FadeIn delay={0.46}>
@@ -88,7 +88,7 @@ export function HeroSection() {
                 <div className="route-plaque rounded-[24px] p-4 md:p-5">
                   <p className="eyebrow">Exhibit Intent</p>
                   <p className="mt-3 text-sm leading-7 text-[var(--ink-soft)] md:text-[15px]">
-                    这里想重现的，不是情节本身，而是《三四郎》里那种缓慢、失重、难以一下说清的晃动。
+                    这里想重现的，不是情节本身，而是《三四郎》里那种人已经在场，心却仍慢半拍的感觉。
                   </p>
                 </div>
               </div>

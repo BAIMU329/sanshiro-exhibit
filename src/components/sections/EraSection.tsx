@@ -10,9 +10,9 @@ const milestones = [
 ];
 
 const statements = [
-  "教育、都市与制度一起改变了青年进入世界的方式。",
-  "东京不再只是首都，它开始像一台加速运转的感受机器。",
-  "青年第一次被要求自己决定人生，却还没有准备好承担这种决定。",
+  "大学开始替青年命名前途，也开始替他们制造比较。",
+  "东京不只是首都，它开始要求人学会一种新的分寸。",
+  "青年被推到选择面前，却没有同时得到足够稳固的支撑。",
 ];
 
 export function EraSection() {
@@ -40,13 +40,6 @@ export function EraSection() {
               title="先是时代变了"
               description="《三四郎》的不安并不只属于三四郎自己，它也属于那个刚刚学会现代化、却还没学会安放青年的时代。"
             />
-          </FadeIn>
-          <FadeIn delay={0.08}>
-            <div className="route-plaque max-w-xl rounded-[24px] p-5">
-              <p className="text-sm leading-7 text-[var(--ink-soft)]">
-                这一屏需要先稳定下来。只有世界足够稳定，一个人的摇晃才会被真正看见。
-              </p>
-            </div>
           </FadeIn>
           <div className="grid gap-5 md:grid-cols-3">
             {statements.map((statement, index) => (

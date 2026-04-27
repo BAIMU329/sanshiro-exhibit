@@ -80,7 +80,7 @@ export function MinekoSection() {
             <div className="absolute left-8 top-8 max-w-[180px] rounded-[24px] border border-[var(--grid-line)]/80 bg-white/45 p-4">
               <p className="eyebrow">Misreading</p>
               <p className="mt-3 text-sm leading-7 text-[var(--ink-soft)]">
-                越靠近她，三四郎越发现自己不是在理解她，而是在试图理解自己对她的理解。
+                越靠近她，三四郎越发现自己未必在理解她，而是在摸索自己究竟看见了什么。
               </p>
             </div>
 
@@ -127,12 +127,12 @@ export function MinekoSection() {
 
         <FadeIn delay={0.3} className="relative z-10 mt-10 max-w-2xl md:ml-[30%]">
           <p className="display-title text-3xl leading-[1.6] text-[var(--ink)] md:text-4xl">
-            他并不是不曾靠近她。
+            他并不是没有靠近她。
             <br />
-            他只是始终无法确认，自己靠近的究竟是她，还是自己的投射。
+            只是越靠近，越难确认自己究竟看见了谁。
           </p>
           <p className="mt-5 max-w-xl text-sm leading-7 text-[var(--ink-soft)] md:text-base">
-            到了这里，关系已经不再只是关系。它开始暴露一个青年究竟如何理解他人，也如何在理解他人的过程中误解自己。
+            到了这里，关系已经不再只是关系。它开始暴露一个青年如何理解他人，也如何在理解他人的途中误解自己。
           </p>
         </FadeIn>
       </div>

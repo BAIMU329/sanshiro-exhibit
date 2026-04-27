@@ -61,19 +61,19 @@ export function ArchiveCard({
             <dl className="space-y-4 text-sm leading-7 text-[var(--ink-soft)]">
               <div>
                 <dt className="mb-1 text-[11px] tracking-[0.18em] text-[var(--ink-muted)] uppercase">
-                  文本线索
+                  文本处境
                 </dt>
                 <dd>{textEvidence}</dd>
               </div>
               <div>
                 <dt className="mb-1 text-[11px] tracking-[0.18em] text-[var(--ink-muted)] uppercase">
-                  历史语境
+                  时代背景
                 </dt>
                 <dd>{historicalNote}</dd>
               </div>
               <div>
                 <dt className="mb-1 text-[11px] tracking-[0.18em] text-[var(--ink-muted)] uppercase">
-                  研究判断
+                  为什么重要
                 </dt>
                 <dd>{interpretation}</dd>
               </div>

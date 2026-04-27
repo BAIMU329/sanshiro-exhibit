@@ -15,9 +15,9 @@ export function LostSection() {
         </FadeIn>
         <FadeIn delay={0.25} className="mt-10 max-w-2xl">
           <p className="text-lg leading-9 text-[var(--ink-soft)] md:text-2xl md:leading-10">
-            它是现代青年尚未完成自我时，
+            它不是答案。
             <br />
-            最真实的存在状态。
+            只是一种尚未完成的状态。
           </p>
         </FadeIn>
         <FadeIn delay={0.35} className="mt-10">
@@ -25,7 +25,7 @@ export function LostSection() {
             <p className="eyebrow">迷える羊</p>
             <p className="mt-2 text-sm leading-7 text-[var(--ink-soft)]">
               当旧的确定感已经开始松动，而新的自我还没有真正长出来时，
-              迟疑本身也许就是成长的一部分，而不是需要立刻被消除的缺陷。
+              迟疑本身也许就是成长的一部分。
             </p>
           </div>
         </FadeIn>

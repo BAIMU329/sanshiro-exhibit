@@ -8,22 +8,22 @@ const mechanismRows = [
   {
     constraint: mechanism.constraints[0],
     reaction: mechanism.interior[0],
-    bridge: "支撑未断，独立先迟到",
+    bridge: "离家未断",
   },
   {
     constraint: mechanism.constraints[1],
     reaction: mechanism.interior[1],
-    bridge: "自由被想象，行动却缩回去",
+    bridge: "无力自立",
   },
   {
     constraint: mechanism.constraints[2],
     reaction: mechanism.interior[2],
-    bridge: "比较越密，内心越容易摇晃",
+    bridge: "比较加重",
   },
   {
     constraint: mechanism.constraints[3],
     reaction: mechanism.interior[3],
-    bridge: "规则不明说，只能靠误读摸索",
+    bridge: "分寸难明",
   },
 ] as const;
 
@@ -92,7 +92,7 @@ export function MechanismSection() {
                     <h3 className="mt-2 text-xl text-[var(--ink)] md:text-2xl">外在困境如何渗入内心</h3>
                   </div>
                   <p className="max-w-xl text-sm leading-7 text-[var(--ink-soft)] md:text-[15px]">
-                    三四郎并不是先有抽象的迷惘，后来才遇到现实压力。恰恰相反，是现实条件一步步改变了他的判断方式。
+                    三四郎并不是先有迷惘，后来才遇到压力。恰恰相反，是现实条件一点点改写了他的判断方式。
                   </p>
                 </div>
 
@@ -165,7 +165,7 @@ export function MechanismSection() {
                     <h3 className="mt-2 text-xl text-[var(--ink)] md:text-2xl">这些反应如何沉积成“迷途”</h3>
                   </div>
                   <p className="max-w-xl text-sm leading-7 text-[var(--ink-soft)] md:text-[15px]">
-                    情绪不会立刻消失，它们会慢慢沉到行动和关系里，最后表现为错失、停滞和未完成。
+                    这些反应不会立刻消失。它们会慢慢沉到行动和关系里，最后留下错失、停滞和未完成。
                   </p>
                 </div>
 

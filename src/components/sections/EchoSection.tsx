@@ -3,8 +3,8 @@ import { SectionShell } from "@/components/layout/SectionShell";
 import { QuoteAside } from "@/components/layout/QuoteAside";
 import { FadeIn } from "@/components/ui/FadeIn";
 
-const leftColumn = ["地方到东京", "学业与前途", "社交判断焦虑", "欲望与迟疑"];
-const rightColumn = ["小城到大城", "教育与就业", "关系与表达焦虑", "选择与延宕"];
+const leftColumn = ["地方到东京", "学业与前途", "欲望与迟疑"];
+const rightColumn = ["小城到大城", "教育与就业", "选择与延宕"];
 
 export function EchoSection() {
   return (
@@ -28,7 +28,7 @@ export function EchoSection() {
         <FadeIn delay={0.1}>
           <div className="route-plaque max-w-2xl rounded-[28px] p-6">
             <p className="display-title text-2xl leading-[1.7] text-[var(--ink)]">
-              这里不是在做简单类比。
+              这不是简单类比。
               <br />
               只是有些青年进入世界时的摇晃，至今仍然熟悉。
             </p>
@@ -70,13 +70,7 @@ export function EchoSection() {
             <div className="space-y-3">
               <p className="eyebrow">Afterword</p>
               <p className="text-sm leading-7 text-[var(--ink-soft)]">
-                这不是把一篇论文搬上屏幕，而是把《三四郎》里的空间、人物、犹疑和时代气候重新组织成一次观看。
-              </p>
-            </div>
-            <div className="space-y-3">
-              <p className="eyebrow">Reading Path</p>
-              <p className="text-sm leading-7 text-[var(--ink-soft)]">
-                可以把它看成一次沿着《三四郎》慢慢下行的阅读：从时代，到入京，到都市，到欲望，再到那种没有真正结束的迷途。
+                一百多年过去，变化的只是表面形式；那些进入世界时的迟缓、失重与不确定，并没有真正离开。
               </p>
             </div>
             <div className="md:justify-self-end">

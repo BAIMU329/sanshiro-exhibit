@@ -53,9 +53,9 @@ export function JourneySection() {
             style={{ y: detailY }}
             className="route-plaque absolute right-8 top-8 w-52 rounded-[28px] p-5"
           >
-            <p className="eyebrow">Tokyo / 확대</p>
+            <p className="eyebrow">Tokyo / 局部</p>
             <p className="text-sm leading-7 text-[var(--ink-soft)]">
-              东京区域被放大后，空间与关系的密度突然增加。
+              东京一旦被放大，空间和关系的密度也突然压了过来。
             </p>
           </motion.div>
           <motion.div
@@ -64,7 +64,7 @@ export function JourneySection() {
           >
             <p className="eyebrow">threshold</p>
             <p className="mt-2 text-sm leading-7 text-[var(--ink-soft)]">
-              这不是简单的移动，而是从“知道怎么生活”进入“必须学习如何判断”。
+              离开的不是地方，先松动的是原来那种自然生活的能力。
             </p>
           </motion.div>
         </motion.div>

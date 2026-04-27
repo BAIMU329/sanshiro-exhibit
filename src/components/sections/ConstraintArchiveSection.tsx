@@ -15,8 +15,7 @@ export function ConstraintArchiveSection() {
         />
         <div className="route-plaque max-w-2xl rounded-[26px] p-5">
           <p className="text-sm leading-7 text-[var(--ink-soft)] md:text-base">
-            如果只看表面，三四郎像是在犹豫。
-            但把这些卡片摊开之后会发现，真正让他迟疑的，从来不只是一颗不够坚定的心。
+            看上去只是犹豫。再往下看，才会发现牵住他的东西并不只在心里。
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 2xl:grid-cols-4">
